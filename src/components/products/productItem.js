@@ -12,7 +12,7 @@ const ProductItem = ({ name, price, color, image }) => {
   )
 }
 
-const StyledProductItem = styled(motion.li).attrs(() => ({
+const StyledProductItem = styled(motion.div).attrs(() => ({
   initial: {},
   animate: {},
   exit: {},
@@ -21,8 +21,7 @@ const StyledProductItem = styled(motion.li).attrs(() => ({
   position: relative;
   background: ${props => props.background};
   border-radius: 16px;
-  width: 220px;
-  min-width: 220px;
+  width: 230px;
   margin-right: 30px;
   height: 250px;
   padding: 24px;
@@ -57,8 +56,9 @@ const StyledProductItem = styled(motion.li).attrs(() => ({
     position: absolute;
     right: -55px;
     top: 50%;
-    transform: translate(-0%, -40%);
+    transform: translate(-0%, -40%) rotate(30deg);
     width: 280px;
+    transition: all 0.3s ease-out;
   }
 `
 

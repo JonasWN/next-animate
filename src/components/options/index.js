@@ -38,7 +38,6 @@ const StyledOptions = styled(motion.section).attrs(() => ({
     line-height: 16px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #1f2732;
     opacity: 0.7;
     margin: 30px 0;
   }
@@ -64,14 +63,13 @@ const StyledOptions = styled(motion.section).attrs(() => ({
       font-size: 16px;
       line-height: 18px;
       letter-spacing: -0.5px;
-      color: #1f2732;
     }
 
     p {
       font-size: 14px;
       line-height: 14px;
       letter-spacing: 0.5px;
-      color: #1f2732;
+
       opacity: 0.5;
     }
   }

@@ -2,15 +2,24 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import ProductItem from './productItem'
+import Flickity from 'react-flickity-component'
+
+const flickityOptions = {
+  pageDots: false,
+  prevNextButtons: false,
+  selectedAttraction: 0.06,
+  friction: 0.35,
+  dragThreshold: 1,
+}
 
 const Products = () => {
   return (
     <StyledProducts>
-      <ul>
+      <Flickity options={flickityOptions}>
         {data.map(shoe => (
           <ProductItem key={shoe.name} {...shoe} />
         ))}
-      </ul>
+      </Flickity>
     </StyledProducts>
   )
 }
@@ -23,16 +32,19 @@ const StyledProducts = styled(motion.main).attrs(() => ({
 }))`
   margin-top: 20px;
 
-  ul {
-    display: flex;
-    min-width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
+  .flickity-enabled:focus {
+    outline: none;
+  }
+
+  .flickity-viewport {
+    overflow: hidden;
+  }
+  .is-selected {
+    img {
+      transform: translate(-0%, -40%) rotate(0deg);
+    }
   }
 `
-
-export default Products
-
 const data = [
   {
     name: 'Alpha Savage',
@@ -59,3 +71,5 @@ const data = [
     image: '/images/large/green.png',
   },
 ]
+
+export default Products

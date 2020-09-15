@@ -31,7 +31,7 @@ const StyledCatagories = styled(motion.header).attrs(() => ({
     overflow-y: hidden;
 
     li {
-      border: 1px solid #d8d8d8;
+      border: ${props => props.theme.colors.border};
       border-radius: 18px;
       opacity: 0.7;
       margin-right: 10px;
@@ -47,8 +47,8 @@ const StyledCatagories = styled(motion.header).attrs(() => ({
       height: 32px;
 
       :first-child {
-        background: #333;
-        color: #fff;
+        background: ${props => props.theme.colors.font};
+        color: ${props => props.theme.colors.body};
         opacity: 1;
       }
     }

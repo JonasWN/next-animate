@@ -13,12 +13,14 @@
     "all": "^0.0.0",
     "eslint": "^7.7.0",
     "eslint-plugin-react": "^7.20.6",
+    "flickity": "^2.2.1",
     "framer-motion": "^2.6.13",
     "next": "^9.5.2",
     "react": "^16.13.1",
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
+    "react-flickity-component": "^3.5.0",
     "recoil": "^0.0.10",
     "styled-components": "^5.1.1"
   }

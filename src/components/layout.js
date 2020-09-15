@@ -1,13 +1,17 @@
 import React from 'react'
 import Head from 'next/head'
-import { Theme } from '../styles/theme'
+import { Theme, DarkTheme } from '../styles/theme'
+import { useRecoilValue } from 'recoil'
+import { darkModeState } from '../recoil/atoms'
 import { Container } from '../styles/layoutStyle'
 import { GlobalStyle } from '../styles/reset'
 import { ThemeProvider } from 'styled-components'
 
 const Layout = ({ children, title }) => {
+  const darkTheme = useRecoilValue(darkModeState)
+
   return (
-    <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={darkTheme ? DarkTheme : Theme}>
       <GlobalStyle />
       <Head>
         <link
