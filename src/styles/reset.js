@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 *,
@@ -53,7 +53,7 @@ a {
   color: inherit;
 }
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
   height: auto;
 }
