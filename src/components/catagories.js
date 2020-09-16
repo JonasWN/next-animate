@@ -5,13 +5,15 @@ import { motion } from 'framer-motion'
 export const Catagories = () => {
   return (
     <StyledCatagories>
-      <h1>Shoes</h1>
-      <ul>
-        <li>All</li>
-        <li>Air Max</li>
-        <li>Presto</li>
-        <li>Huarache</li>
-      </ul>
+      <motion.div initial={{ x: -20 }} animate={{ x: 0 }} exit={{ x: -20 }}>
+        <h1>Shoes</h1>
+        <ul>
+          <li>All</li>
+          <li>Air Max</li>
+          <li>Presto</li>
+          <li>Huarache</li>
+        </ul>
+      </motion.div>
     </StyledCatagories>
   )
 }
@@ -29,6 +31,10 @@ const StyledCatagories = styled(motion.header).attrs(() => ({
     margin-top: 10px;
     overflow: scroll;
     overflow-y: hidden;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
     li {
       border: ${props => props.theme.colors.border};

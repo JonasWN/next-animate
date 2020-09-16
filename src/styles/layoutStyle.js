@@ -17,4 +17,6 @@ export const device = {
 export const Container = styled.div`
   min-height: 100vh;
   padding: 30px 20px;
+  max-width: 980px;
+  margin: 0 auto;
 `

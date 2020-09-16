@@ -6,8 +6,9 @@ import { darkModeState } from '../recoil/atoms'
 import { Container } from '../styles/layoutStyle'
 import { GlobalStyle } from '../styles/reset'
 import { ThemeProvider } from 'styled-components'
+import { Navigation } from '../components/nav'
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title, navColor }) => {
   const darkTheme = useRecoilValue(darkModeState)
 
   return (
@@ -24,7 +25,10 @@ const Layout = ({ children, title }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <title>{title}</title>
       </Head>
-      <Container>{children}</Container>
+      <Container>
+        <Navigation background={navColor} />
+        {children}
+      </Container>
     </ThemeProvider>
   )
 }

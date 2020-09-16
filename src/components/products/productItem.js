@@ -1,20 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import NextLink from 'next/link'
 
-const ProductItem = ({ name, price, color, image }) => {
+const ProductItem = ({ name, price, color, image, sku, shown }) => {
   return (
-    <StyledProductItem background={color}>
-      <h2>{name}</h2>
-      <p>£{price}</p>
-      <img src={image} alt="product image of shoe" />
-    </StyledProductItem>
+    <NextLink href={`/product/[slug]`} as={`/product/${sku.toString()}`}>
+      <StyledProductItem background={color} shown={shown}>
+        <h2>{name}</h2>
+        <p>£{price}</p>
+        <motion.img
+          src={image}
+          alt="product image of shoe"
+          initial={{ rotate: 30 }}
+          animate={{ rotate: shown ? 0 : 30 }}
+        />
+      </StyledProductItem>
+    </NextLink>
   )
 }
 
-const StyledProductItem = styled(motion.div).attrs(() => ({
-  initial: {},
-  animate: {},
+const StyledProductItem = styled(motion.a).attrs(props => ({
+  initial: false,
+  animate: {
+    rotateY: props.shown ? [-10, 10, 0] : 0,
+  },
   exit: {},
   transition: {},
 }))`
@@ -55,7 +65,7 @@ const StyledProductItem = styled(motion.div).attrs(() => ({
   img {
     position: absolute;
     right: -55px;
-    top: 50%;
+    top: 10%;
     transform: translate(-0%, -40%) rotate(30deg);
     width: 280px;
     transition: all 0.3s ease-out;

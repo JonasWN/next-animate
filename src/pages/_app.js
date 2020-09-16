@@ -1,10 +1,13 @@
 import React from 'react'
 import { RecoilRoot } from 'recoil'
+import { AnimatePresence } from 'framer-motion'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <RecoilRoot>
-      <Component {...pageProps} />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
     </RecoilRoot>
   )
 }
